@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+        <link href="{{ url_for('static', filename='styles_entry.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="static/ic.ico" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="autosize.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>DiarYour: {% block title %}{% endblock %}</title>
+        <style>
+           body { overflow-y: hidd.en; }
+        </style>
+  </head>
+
+  <body>
+    <div class="container-main_x">
+      <div id="zu-app" class="zu-app ng-scope" >
+        <div class="app__wrap hide-sidebar--init banner--show" style="">
+          <div class="ng-scope">
+            <div id="header_x" class="header_x" header="">
+              <div class="header-navigation" header-navigation="">
+                <div null="" class="ng-scope"></div>
+              </div>
+              <div class="header-search" global-search="" style="">
+                <div class="global-search" >
+                  <div class="global-search__input">
+                    <form class="ng-pristine ng-valid">
+                      <input class="js--global-search__input ng-pristine ng-untouched ng-valid ng-empty" type="text" placeholder="Search">
+                      <button class="btn_x btn-clear_x submit-btn" type="submit">
+                        <span class="fa_x fa-arrow-circle-o-right submit-icn"></span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="global-search__overlay" >
+                  </div>
+              </div>
+              <div>
+                <a href="{{ url_for('index') }}" class="logo" target="_self" >
+                <img class="jpg_logo" alt="logo" src="static/logo1_white.png">  </a>
+              </div>
+
+              <div class="header-right-nav">
+                <div class="user">
+                  <div class="user-dropdown dropdown" style="">
+                    <a href="" class="dropdown-link js-user-dropdown-link ng-binding" data-toggle="dropdown">
+                            {% for i in name %}{{ i.username }}{% endfor %}
+                    </a>
+                    <ul id="navbar_n" position="right" role="menu" aria-labelledby="dLabel">
+                      <!--  <ul class="dropdown-menu js-dropdown-menu" position="right" role="menu" aria-labelledby="dLabel">  -->
+                    <li class="beach">  <a href="#">&darr;&darr;&darr;</a>
+                      <ul>
+                        <li class="dropdown__podcast">
+                          <a href="{{ url_for('index') }}" class="js-dropdown-link" target="_blank" title="zu">
+                            &#160;&#160;&#160;&#160;&#160;Start Page
+                          </a>
+                        </li>
+                        <li class="dropdown__account">
+                          <a ui-sref="account" class="js-dropdown-link" title="" href="{{ url_for('history') }}">
+                            &#160;&#160;&#160;&#160;&#160;History
+                          </a>
+                        </li>
+                        <li class="dropdown__settings">
+                          <a id="js-dropdown-link_v" target="_blank" title="Help and FAQs" href="{{ url_for('helpFAQ') }}">
+                            &#160;&#160;&#160;&#160;Help &amp; FAQs
+                          </a>
+                        </li>
+                        <li>
+                          <button class="btn_x js-dropdown-link js-logout-button" title="Logout">
+                            <a href="{{ url_for('logout') }}" ><strong>LOG OUT&#160;&#160;&#160;</strong></a>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="journal-content" id="journal-content">
+            <div class="customize-entry-wrap ng-hide" >
+            </div><!-- custom entry directive appended here-->
+            <div class="post-wrap post ng-isolate-scope" style="min-height: 580px; background-image: url(&quot;/stylesheets/themes/pad/basic/pad_top.gif&quot;);">
+
+              <form action="{{ url_for('index_open') }}" method="POST">
+
+              <div class="post-wrap_content" id="js-post-wrap-content">
+                <div class="post-top">
+                  <div class="post-title" style="color: rgb(75, 82, 91);">
+
+                    <div class="post-title-main">
+                      <textarea class="h1 input-clear " autofocus placeholder="Entry Title" name="title" title="Entry Title" pz-auto-size="" min-height="3" rows="1"  style="height: 45px; width: 600px;">{% block main1 %}{% endblock %}</textarea>
+                    </div>
+                    <div class="sync" >
+                      <button class="savenow" type="submit">Save now</button>
+
+                      <p class="savetime ng-scope">
+                        <span class="syncedtime" style="">
+                          <span class="check fa fa-check" style="">&nbsp;</span><!--Saved-->
+                          <span timeago="vm.entry.modified_at" class="ng-isolate-scope">
+                            <span class="timeago-display ng-binding">{% block main4 %}{% endblock %}</span>
+                          </span>
+                        </span>
+                    </div>
+                  </div>
+                    <div class="post__toolbars__wrap">
+                      <div class="post__toolbars__container">
+                        <div class="post__toolbars js-post-toolbars">
+                          <div class="post-controls js-post-toolbar js-toolbar-child">
+                            <div class="top-border"></div>
+                            <div class="controls-left controls-group">
+                              <div class="date-wrap controls-item">
+                                <p class="date" style="color: rgb(75, 82, 91);">
+                                  <a class="created-at ng-binding" href="" >&nbsp;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{% block main3 %}{% endblock %} &#160; &#160; &#160;</a>
+                                  <input class="created-at-input" type="text" >
+                                  <span class="ng-binding ng-hide">Thu. 9/14/2017</span>
+                                </p>
+                                <div id="entry-date-wrap" class="ng-hide">
+                                  <div class="pika-single is-hidden is-bound" style="position: static; left: auto; top: auto;"></div>
+                                </div>
+                                <p class="date ng-binding ng-hide" style="color: rgb(75, 82, 91);">
+                                  <span class="fa fa-calendar-o"></span>Thu. 9/14/2017
+                                </p>
+                              </div><!-- ngIf: !zen.active -->
+                              <div class="word-count__wrap controls-item ng-scope">
+                                <p class="word-count ng-binding"> &#160;{{ words }} {{ ct }} {{ mm }}</p>
+                              </div><!-- end ngIf: !zen.active -->
+                            </div>
+                            <div class="bottom-border"></div>
+                            <div class="clr"></div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="post-content" default-entry-font="vm.entry.journal.composeSettings.font">
+                  <div class="editor-wrap js-editor-wrap" style="color: rgb(75, 82, 91); font-family: Lora; font-size: 10px; max-height: none;">
+                    <div id="cke_editor" class="cke_1 cke cke_reset cke_chrome cke_editor_editor cke_ltr cke_browser_webkit" dir="ltr" lang="ru" role="application" aria-labelledby="cke_editor_arialbl">
+                      <div class="cke_inner cke_reset" role="presentation">
+                        <div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: auto;">
+                          <div class="cke_wysiwyg_div cke_reset cke_enable_context_menu cke_editable cke_editable_themed cke_contents_ltr cke_show_borders" hidefocus="true" contenteditable="true" tabindex="0" spellcheck="true" style="position: relative;" role="textbox" aria-label="Визуальный текстовый редактор, editor" aria-describedby="cke_46">
+
+                            <p><textarea class="bleat" placeholder="Your entry here" id="e.ditor" name="editor_1"  title="Your entry here" >{% block main2 %}{% endblock %}</textarea></p> <!-- ТУТ ТЕКСТ ЕНТРІ -->
+                          </div>
+                        </div>
+                        <span id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;">
+                          <div class="cke_wordcount" style="" title="Статистика">
+                            <span id="cke_wordcount_editor" class="cke_path_item">Symbols: {{ c }}, Words: {{ ct }}</span>
+                          </div>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

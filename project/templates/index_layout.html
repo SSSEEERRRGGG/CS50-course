@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+        <link href="{{ url_for('static', filename='styles_layout.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="static/ic.ico" type="image/x-icon">
+        <title>DiarYour: {% block title %}{% endblock %}</title>
+        <style>
+           body { overflow-y: hidden;
+                  overflow-x: hidden }
+        </style>
+        </head>
+    <body>
+
+    <div class="container-main_x" >
+      <div id="zu-app" class="zu-app">
+        <div class="app__wrap hide-sidebar--init banner--show"  style="">
+          <div class="">
+            <div id="header_x" class="header_x" header="">
+              <div class="header-navigation" header-navigation="">
+                <div null="" class=""></div>
+              </div>
+              <div class="header-search" global-search="" style="">
+                <div class="global-search">
+                  <div class="global-search__input">
+                    <form class="">
+                      <input class="js--global-search__input" type="text" placeholder="Search">
+                      <button class="btn_x btn-clear_x submit-btn" type="submit">
+                        <span class="fa fa-arrow-circle-o-right submit-icn"></span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="global-search__overlay">
+                  </div>
+              </div>
+
+
+                <div>
+                  <a href="{{ url_for('index') }}" class="logo" target="_self" >
+                  <img class="jpg_logo" alt="logo" src="static/logo1_white.png">  </a>
+                </div>
+
+            <div class="header-right-nav">
+              <div class="user">
+                <div class="user-dropdown dropdown" style="">
+                  <a href="" class="dropdown-link js-user-dropdown-link" data-toggle="dropdown">{% for o in name %}{{ o.username }}{% endfor %}&#160;&#160;&#160;&#160;&#160;
+                     </a>
+
+                    <ul id="navbar_n" position="right" role="menu" aria-labelledby="dLabel">
+                      <!--  <ul class="dropdown-menu js-dropdown-menu" position="right" role="menu" aria-labelledby="dLabel">  -->
+                    <li class="beach">  <a href="#">&darr;&darr;&darr;</a>
+                      <ul>
+                        <li class="dropdown__podcast">
+                          <a href="{{ url_for('index') }}" class="js-dropdown-link" target="_blank" title="zu">
+                            &#160;&#160;&#160;&#160;&#160;Start Page
+                          </a>
+                        </li>
+                        <li class="dropdown__account">
+                          <a ui-sref="account" class="js-dropdown-link" title="" href="{{ url_for('history') }}">
+                            &#160;&#160;&#160;&#160;&#160;History
+                          </a>
+                        </li>
+                        <li class="dropdown__settings">
+                          <a id="js-dropdown-link_v" target="_blank" title="Help and FAQs" href="{{ url_for('helpFAQ') }}">
+                            &#160;&#160;&#160;&#160;Help &amp; FAQs
+                          </a>
+                        </li>
+
+                        <li>
+                          <button class="btn_x js-dropdown-link js-logout-button" title="Logout">
+                            <a href="{{ url_for('logout') }}" ><strong>LOG OUT&#160;&#160;</strong></a>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              <div class="clr"></div>
+            </div>
+          </div>
+          <div class="clr"></div>
+        </div>
+      </div>
+      <main>
+                {% block main %}{% endblock %}
+      </main>
+
+      </div>
+        <div class="footer__wrap" style="">
+          <div class="container">
+            <div class="public-footer__wrap">
+              <div class="footer__navigation single-col">
+                <a target="_self" href="{{ url_for('index') }}"> DiarYour: </a>
+                <a target="_self" href="{{ url_for('about_us') }}">About us</a>
+                <a target="_self" href="{{ url_for('support') }}">Support</a>
+              </div>
+            </div>
+              <p class="public-footer__copyright"> DiarYour   2017 </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
+

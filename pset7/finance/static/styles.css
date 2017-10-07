@@ -1,0 +1,49 @@
+.container
+{
+    margin-left: auto;                                    /* center contents */
+    margin-right: auto;
+    text-align: center;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.navbar-default .navbar-brand .blue                        /* colors for navbar */
+{
+    color: #537fbe;
+}
+.navbar-default .navbar-brand .red
+{
+    color: #ea433b;
+}
+.navbar-default .navbar-brand .yellow
+{
+    color: #f5b82e;
+}
+.navbar-default .navbar-brand .green
+{
+    color: #2e944b;
+}
+
+main .form-control
+{
+    display: inline-block;                                   /* center form controls */
+    width: auto;                                             /* override Bootstrap's 100% width for form controls */
+}
+main img
+{
+    max-width: 100%;                                         /* constrain images on small screens */
+}
+main td
+{
+    text-align: left;                                        /* left-align tables' cells */
+}

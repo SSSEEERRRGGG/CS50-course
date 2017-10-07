@@ -1,0 +1,12 @@
+0.  It`s the longest word in English, what mean a lung disease caused by the inhalation of silica dust.
+1.  It returns resource usage measures for the calling process itself, the children of the calling process, or the calling thread (Example: RUSAGE_SEF).
+2.  There are 16 members:2 structs and 16 long types.
+3.  Passing in values involves copying the two 16 member struts which would take some time and memory. getrusage prototype expects a pointer, and this is more efficient than passing by value.
+    If a rusage struct has an undefined value it is autonatically set to zero, so this negates any dereferencing crashes or extra checks.
+4.  The for loop spell checks each word by each character (until it points at an end of file character). It appends chracters to the word array with permanent ignoring
+    numbers and strings that have more than the given, fixed length (it`s require current character as alphabetical or an apostrophe). Then, once it reaches the end of the string, 
+    the function prepares for a new word. Once a whole valid word is found, the current word in the word array is terminated, the counter is updated, and then the spelling is checked.
+    If the word is misspelled, the function prints that word and once again prepares for the next word.
+5.  fgetc checks the character is a valid letter and fscanf does not check each character and might return a string with some invalid characters (fine to use 
+    then every words finishing by a space or a line return). fgetc reads the file character by character, discriminating vs anything that isn't alphabetical or an apostrophe proceeded by a character.
+6.  The const type ensures that the initial value of the parameter can`t be modified.

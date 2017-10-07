@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="static/ic.ico" type="image/x-icon">
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <title>DiarYour: {% block title %}{% endblock %}</title>
+        <style>
+           body { overflow-y: hidden; }
+           .layer {
+                width: 300px; height: 150px; padding: 5px;}
+        </style>
+        </head>
+    <body>
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbar">
+                        {% if session.user_id %}
+                        {% else %}
+                           <div class="main_login">
+                                <a class="login_main_login" href="{{ url_for('login') }}" >Log in</a>
+                                <a class="register_main_login" href="{{ url_for('register') }}">Register</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+            {% if get_flashed_messages() %}
+                <header>
+                    <div class="alert alert-info" role="alert">
+                        {{ get_flashed_messages() | join(" ") }}
+                    </div>
+                </header>
+            {% endif %}
+            <main>
+                {% block main %}{% endblock %}
+            </main>
+        </div>
+    </body>
+</html>

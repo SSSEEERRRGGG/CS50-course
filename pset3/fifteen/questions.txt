@@ -1,0 +1,4 @@
+0. also: 3x3, 5x5, 6x6, 7x7, 8x8, 9x9
+1. It is multi-dimensional array
+2. It is greet
+3. functions: init, draw, move, won

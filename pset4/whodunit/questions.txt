@@ -1,0 +1,13 @@
+1.  It is one of the header files in the C standard library. And it allows to write more portable code by providing some usefull things.
+2.  Using well-defined types makes the code much easier and safer, you won't get any surprises when one machine interprets int as 32-bit and 
+    another as 16-bit. In general these are unsigned and signed integer types from stdint.h.
+3.  1 byte in a BYTE, 4 bytes in a DWORD (32 bits), 4 bytes - LONG, 2 bytes - WORD.
+4.  The first two bytes of any BMP file must contain ASCII B and M.
+5.  bfSize - size of the bmp file (in bytes). biSize - size of the structure (in bytes too).
+6.  If biHeight is negative, the image is bottom down (postive - bottom up). Zero is undeclared.
+7.  A field is biBitCount (BMP's color depth - the number of bits per pixel).
+8.  If this file does not exist.. or there is no possibility to create new one.
+9.  We iterate through 1 pixel only 1 time.
+10. 3 bytes.
+11. Fseek allows us to change the offset of a pointer (sets the file position indicator for the stream pointed to by 'stream').
+12. It is the current position in the file.

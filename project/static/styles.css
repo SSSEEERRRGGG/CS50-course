@@ -1,0 +1,184 @@
+.container {
+    margin-left: auto;                                    /* center contents */
+    margin-right: auto;
+    text-align: center;
+}
+.alert-info {
+    color: #F52828;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    position: relative;
+    top: 200px;
+}
+.alert {
+    padding: 10px;
+    margin-bottom: 0px;
+    margin-top: -40px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.navbar-default .navbar-brand .blue                      /* colors for navbar */
+{
+    color: #537fbe;
+}
+.navbar-default .navbar-brand .red {
+    color: #ea433b;
+}
+.navbar-default .navbar-brand .yellow {
+    color: #f5b82e;
+}
+.navbar-default .navbar-brand .green {
+    color: #2e944b;
+}
+main .form-control {
+    display: inline-block;                                   /* center form controls */
+    width: auto;                                             /* override Bootstrap's 100% width for form controls */
+}
+main img {
+    max-width: 100%;                                         /* constrain images on small screens */
+}
+main td {
+    text-align: left;                                        /* left-align tables' cells */
+}
+.main_img_back {
+    position: static;
+    padding-top: 100px;
+    overflow: hidden;
+    background: url(background.jpg) #f2f2f2;
+    background-size: 100% auto;
+    background-position: center top;
+    width: 1602px;
+    margin-left: -10px;
+    margin-top: -10px;
+    background-repeat: no-repeat;
+    padding-bottom: 40%;
+    clip:rect(40px 250px 160px 50px);
+}
+.main_login {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.login_main_login,
+.register_main_login {
+	background: #000;
+	border-radius: 30px;
+	color: #ffffff;
+	float: right;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+.main_login .btn {
+    color: #8e8e93;
+}
+.btn-clear .btn-slim {
+    padding-bottom: 3px;
+    margin-bottom: 5px;
+}
+.main_signup_logo,
+.main_signup_action {
+    text-align: center;
+    height: 260px;
+    width: 1670px;
+}
+.jpg_logo {
+    text-align: bottom;
+    height: 205px;
+    width: 660px;
+}
+.main_signup_logo1 {
+    text-align: center;
+    height: 24px;
+    width: 16px;
+}
+.register_form {
+    margin-top: 40px;
+    margin: 150px auto;
+	width: 300px;
+}
+.register_form_1 {
+    position: static;
+    padding-top: 100px;
+    overflow: hidden;
+    background: url(https://www.artleo.com/pic/download.php?file=201108/800x480/artleo.com-8004.jpg) #999;
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding-bottom: 40%;
+    clip:rect(40px 250px 160px 50px);
+    width: 1602px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+.register_form h1 {
+	background-color: #282830;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 14px;
+	padding: 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.register_form fieldset {
+	background: #fff;
+	border-radius: 0 0 5px 5px;
+	padding: 20px;
+	position: relative;
+}
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	outline: none;
+	-webkit-appearance: none;
+}
+.register_form input{
+	font-size: 14px;
+}
+.register_form input[type="text"],
+.register_form input[type="password"] {
+	border: 1px solid #dcdcdc;
+	padding: 12px 10px;
+	width: 231px;
+}
+.register_form input[type="text"] {
+	border-radius: 3px 3px 0 0;
+}
+.register_form input[type="password"] {
+	border-top: none;
+	border-radius: 0px 0px 3px 3px;
+}
+.register_form button[type="submit"]{
+	background: #1dabb8;
+	border-radius: 3px;
+	color: #fff;
+	float: right;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px;
+}
+.main_img_back button[type="submit"]{
+	background: #1dabb8;
+	border-radius: 3px;
+	color: #fff;
+	float: center;
+	font-weight: bold;
+	margin-top: 37px;
+	padding: 20px 40px;
+	margin-right: -10px;
+}
+h1 { margin: 0; }
+fieldset {
+	border: none;
+	margin: 0;
+}
+#a_start {
+    padding: 7px 15px;
+    float: none;
+    margin-top: 26px;
+}
+

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <link href="{{ url_for('static', filename='styles_history.css') }}" rel="stylesheet"/>
+        <link rel="shortcut icon" href="static/ic.ico" type="image/x-icon">
+
+        <scri.pt src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <scri.pt src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <title>DiarYour: All enties</title>
+        <style>
+           body { overflow-y: h.idden; }
+           .layer { width: 300px; height: 150px; padding: 5px;}
+        </style>
+    </head>
+
+    <body>
+    <div class="container-main_x">
+      <div id="zu-app" class="zu-app">
+        <div class="app__wrap hide-sidebar--init banner--show" >
+          <div class="">
+            <div id="header_x" class="header_x" >
+              <div class="header-navigation" >
+                <div null="" class=""></div>
+              </div>
+              <div class="header-search" global-search="" style="">
+                <div class="global-search" >
+                  <div class="global-search__input">
+                    <form class="">
+                      <input class="js--global-search__input" type="text" placeholder="Search">
+                      <button class="btn_x btn-clear_x submit-btn" type="submit">
+                        <span class="fa fa-arrow-circle-o-right submit-icn"></span>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="global-search__overlay">
+                  </div>
+              </div>
+
+                <div>
+                  <a href="{{ url_for('index') }}" class="logo" target="_self" >
+                  <img class="jpg_logo" alt="logo" src="static/logo1_white.png">  </a>
+                </div>
+
+            <div class="header-right-nav">
+              <div class="user">
+                <div class="user-dropdown dropdown" style="">
+                  <a href="" class="dropdown-link js-user-dropdown-link" data-toggle="dropdown">
+                          {% for i in name %}{{ i.username }}{% endfor %}
+                     </a>
+
+                    <ul id="navbar_n" position="right" role="menu" aria-labelledby="dLabel">
+                      <!--  <ul class="dropdown-menu js-dropdown-menu" position="right" role="menu" aria-labelledby="dLabel">  -->
+                    <li class="beach">  <a href="#">&darr;&darr;&darr;</a>
+                      <ul>
+                        <li class="dropdown__podcast">
+                          <a href="{{ url_for('index') }}" class="js-dropdown-link" target="_blank" title="">
+                            &#160;&#160;&#160;&#160;Start Page
+                          </a>
+                        </li>
+
+                        <li class="dropdown__settings">
+                          <a id="js-dropdown-link_v" target="_blank" title="Help and FAQs" href="{{ url_for('helpFAQ') }}">
+                            &#160;&#160;&#160;&#160;Help &amp; FAQs
+                          </a>
+                        </li>
+
+                        <li>
+                          <button class="btn_x js-dropdown-link js-logout-button" title="Logout">
+                            <a href="{{ url_for('logout') }}" ><strong>LOG OUT&#160;&#160;&#160;</strong></a>
+                          </button>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              <div class="clr"></div>
+            </div>
+          </div>
+
+          <div class="clr"></div>
+        </div>
+      </div>
+
+          <div id="app-container" class="app-container">
+            <!-- uiView: -->
+            <ui-view class="" style="">
+              <journal-index journals="ctrl.journals" account="ctrl.account" class="">
+              <div class="journals__header__wrap">
+                <div class="journals__header">
+                  <div class="container">
+                    <div class="journals__header__content">
+                      <p class="">You have {{ count }} {{ b }}</p>
+                    </div>
+                    <div class="journals__header__actions">
+                      <a class=" new-journal btn_x btn-slim btn-primary" href="{{ url_for('index_entry') }}">
+                        <span class="icon icn-aj-newjournal"></span>&nbsp;New Entry
+                      </a>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <img class="bg3" src="static/bg3.jpg">
+                <div class="content-container">
+
+                <table class="table table-striped" sty.le="width: 100%">
+                  <tr class="table1">
+                    <th style="width: 130px">TITLE</th>
+                    <th style="min-width: 450px">ENTRY</th>
+                    <th style="width: 90px">SAVED</th>
+                    <th class="away">OPEN</th>
+                    <th class="away">DELETE</th>
+                  </tr>
+                  {% for diar in diary %}
+                  <tr class="table2">
+
+                    <form action="{{ url_for('open_entry') }}" method="post">
+                      <td class="widt">
+                        <input class="form-control width" name="title" placeholder= {{ diar.title }} value="{{ diar.title }}" type="text" size="17px"/></td>
+                      <td>{{ diar.sliced_editor }}</td>
+                      <td style="text-align: center">{{ diar.time }}</td>
+                      <td class="away" style="text-align: center"><button class="new-journal btn_x btn-slim btn-primary" type="submit">OPEN</button></td>
+                    </form>
+
+                    <form action="{{ url_for('delete') }}" method="post">
+
+                      <td class="away" style="text-align: center">
+                        <input class="kill-control" name="title" value="{{ diar.title }}" type="hidden" />
+                        <button name="title" class="new-journal btn_x btn-slim btn-primary_d" type="submit">
+                        DELETE</button></td>
+                    </form>
+
+                  </tr>
+                  {% endfor %}
+                </table>
+
+                </div>
+            </journal-index>
+            </ui-view>
+          </div>
+        </div>
+
+        <div class="footer__wrap" style="">
+          <div class="container">
+            <div class="public-footer__wrap">
+              <div class="footer__navigation single-col">
+                <a target="_self" href="{{ url_for('index') }}"> DiarYour: </a>
+                <a target="_self" href="{{ url_for('about_us') }}">About us</a>
+                <a target="_self" href="{{ url_for('support') }}">Support</a>
+              </div>
+            </div>
+              <p class="public-footer__copyright"> DiarYour   2017 </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
+

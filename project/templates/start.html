@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Start Page
+{% endblock %}
+
+{% block main %}
+    <div class="main_img_back">
+            <div class="main_container">
+                <div class="main_signup">
+                    <div class="main_signup_logo"></div>
+                    <h1 class="main_signup_logo">&#160;&#160;Your online <br>&#160; diary.<br>&#160;&#160;You`ll love it! <br>
+                    <form action="{{ url_for('login') }}">
+                        <div class="logo_css">
+                            <button class="to_start" type="submit">Get Started</button>
+                        </div>
+                    </form>
+                    <div>
+                        <img class="jpg_logo" alt="logo" src="static/logo1.png"> </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+{% endblock %}
